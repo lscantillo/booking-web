@@ -1,0 +1,28 @@
+<div id="<%= dom_id room %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= room.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= room.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Foto:</strong>
+    <%= image_tag room.image, class: "shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Hourly price:</strong>
+    <%= room.hourly_price %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this room", room, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this room', edit_room_path(room), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
+
