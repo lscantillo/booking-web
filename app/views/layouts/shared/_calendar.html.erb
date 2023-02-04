@@ -1,0 +1,26 @@
+
+<div data-controller="calendar">
+  <div class="header flex justify-between border-b p-2 px-4">
+        <span class="px-4 text-lg font-bold">
+          <span data-calendar-target="monthName"></span>
+        </span>
+        <div class="px-4">
+          <button data-action="click->calendar#previous" class="p-1">
+            <i class="fas fa-chevron-circle-left"></i>
+          </button>
+          <button data-action="click->calendar#month" class="p-1">
+            Mes
+          </button>
+          <button data-action="click->calendar#today" class="p-1">
+            <i class="fas fa-calendar-day"></i>
+          </button>
+          <button data-action="click->calendar#week" class="p-1">
+            Semana
+          </button>
+          <button data-action="click->calendar#next" class="p-1">
+            <i class="fas fa-chevron-circle-right"></i>
+          </button>
+        </div>
+    </div>
+  <div id="calendar"></div>
+</div>
