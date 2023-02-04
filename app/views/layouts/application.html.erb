@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>BookingWeb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="bg-blueGray-100">
+    <main class="">
+      <%= render "layouts/shared/sidebar" %>
+      <div class="relative md:ml-64 bg-blueGray-100">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>

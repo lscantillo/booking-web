@@ -1,0 +1,13 @@
+
+<div class="mt-6 lg:mb-0 mb-6">
+  <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button"><i class="fab fa-twitter"></i></button>
+  <button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button"><i class="fab fa-facebook-square"></i></button>
+  <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button"><i class="fab fa-dribbble"></i></button>
+  <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button"><i class="fab fa-github"></i></button>
+</div>
+
+<!--## 3.3.2. Social Icons-->
+<!--Create a rails partial using tailwindcss to display social icons and edit, delete, show record-->
+<!--app/views/layouts/_social_icons.html.erb-->
+<%= link_to "Show this rate", rate, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+<%= link_to 'Edit this rate', edit_rate_path(rate), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
