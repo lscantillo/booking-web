@@ -9,6 +9,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      display: ['group-hover'],
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
