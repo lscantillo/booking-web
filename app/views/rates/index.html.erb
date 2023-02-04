@@ -31,8 +31,8 @@
                 <tr>
                   <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= rate.room.name %></th>
                   <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">$<%= rate.price %> COP</td>
-                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= rate.start_at.to_s(:time) %></td>
-                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= rate.end_at.to_s(:time) %> </td>
+                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= rate.start_at.to_fs(:time) %></td>
+                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= rate.end_at.to_fs(:time) %> </td>
                   <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     <div class="flex items-center">
                       <%= link_to edit_rate_path(rate), class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-blueGray-400" do %>
