@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/check.txt', to: proc {[200, {}, ['it_works']]}
   devise_for :users
   resources :bookings
   resources :rates
