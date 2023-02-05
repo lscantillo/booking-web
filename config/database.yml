@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: booking_web_production
-  username: booking_web
-  password: <%= ENV["BOOKING_WEB_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
