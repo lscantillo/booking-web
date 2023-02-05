@@ -30,7 +30,7 @@
             <% @rooms.each do |room| %>
               <tr>
                 <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  <%= image_tag room.image, class: "h-12 w-12 bg-white rounded-full border" %>
+                  <%= image_tag room.image.variant(resize_to_fill: [250, 250]), class: "h-12 w-12 bg-white rounded-full border" %>
                   <span class="ml-3 font-bold NaN"><%= room.name %></span>
                 </th>
                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><%= room.description %> </td>
