@@ -8,8 +8,15 @@ class Booking < ApplicationRecord
   validates :end_at, presence: true
   validates :end_at, comparison: { greater_than: :start_at }
 
-  scope :default, -> { where.not(status: :soft_delete) }
-  scope :sort_by_start_at, -> { order(:created_at => :desc) }
+
+
+  def self.default
+    where.not(status: :soft_delete)
+  end
+
+  def self.sort_by_start_at
+    order(:created_at => :desc)
+  end
   def start_time
     self.start_at
   end

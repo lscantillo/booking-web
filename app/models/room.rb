@@ -5,7 +5,10 @@ class Room < ApplicationRecord
   validates :description, presence: true
   validates :image, presence: true
   enum status: { available: 0, unavailable: 1, soft_delete: 2 }
-  scope :default, -> { where.not(status: :soft_delete) }
+
+  def self.default
+    where.not(status: :soft_delete)
+  end
   def destroy
     self.soft_delete
   end
