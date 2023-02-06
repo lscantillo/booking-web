@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms or /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = Room.default
     @pagy, @rooms = pagy(@rooms, items: 10)
   end
 
@@ -67,6 +67,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name, :description, :hourly_price, :image)
+      params.require(:room).permit(:name, :description, :hourly_price, :image).with_defaults(status: :available)
     end
 end

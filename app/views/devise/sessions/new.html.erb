@@ -4,7 +4,7 @@
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
           <div class="text-blueGray-400 text-center mb-3 font-bold"><small>Ingresar</small></div>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
             <div class="relative w-full mb-3">
               <%= f.label :email, class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
@@ -27,7 +27,7 @@
           <% end %>
         </div>
       </div>
-      <%= render  "devise/shared/links" %>
+      <% render  "devise/shared/links" %>
     </div>
   </div>
 </div>

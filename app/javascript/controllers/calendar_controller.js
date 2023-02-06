@@ -14,7 +14,7 @@ export default class extends Controller {
                 {
                     id: booking.id,
                     calendarId: '1',
-                    title: booking.description,
+                    title: booking.title,
                     category: 'time',
                     dueDateClass: '',
                     start: booking.start_at,

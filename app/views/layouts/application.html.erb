@@ -15,16 +15,17 @@
 
   <body class="bg-blueGray-100">
     <main class="">
+      <%= render "layouts/shared/notice" %>
       <% if user_signed_in? %>
         <%= render "layouts/shared/sidebar" %>
-        <%= render "layouts/shared/notice", notice: notice %>
         <div class="relative md:ml-64 bg-blueGray-100">
           <%= yield %>
         </div>
       <% else %>
-        <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full" style="background-image: url('https://bit.ly/3DErXHg');"></div>
-        <div class="min-h-screen flex items-center justify-center">
-          <%= yield %>
+        <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full" style="background-image: url('https://bit.ly/3DErXHg');">
+          <div class="min-h-screen flex items-center justify-center">
+            <%= yield %>
+          </div>
         </div>
       <% end %>
     </main>

@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings or /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = Booking.default.sort_by_start_at
     @pagy, @bookings = pagy(@bookings, items: 10)
   end
 
@@ -71,6 +71,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:status, :description, :start_at, :end_at, :room_id, :customer_id).with_defaults(:customer_id => 1)
+      params.require(:booking).permit(:status, :title, :description, :start_at, :end_at, :room_id, :customer_id).with_defaults(:customer_id => 1)
     end
 end

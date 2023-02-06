@@ -24,32 +24,38 @@
           <div class="flex flex-wrap">
             <div class="w-full lg:w-6/12 px-4">
               <div class="relative w-full mb-3">
+                <%= form.label 'Título', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
+                <%= form.text_field :title, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
+              </div>
+            </div>
+            <div class="w-full lg:w-6/12 px-4">
+              <div class="relative w-full mb-3">
                 <%= form.label 'Descripción', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
                 <%= form.text_area :description, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
               </div>
             </div>
             <div class="w-full lg:w-6/12 px-4">
               <div class="relative w-full mb-3">
-                <%= form.label 'Status', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
-                <%= form.select :status, options_for_select([['Confirmada', 1], ['Pendiente', 0], ['Cancelada', 2]]), {}, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
-              </div>
-            </div>
-            <div class="w-full lg:w-6/12 px-4">
-              <div class="relative w-full mb-3">
                 <%= form.label 'Hora Inicio', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
-                <%= form.datetime_field :start_at, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
+                <%= form.datetime_field :start_at, min: Date.today, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
               </div>
             </div>
             <div class="w-full lg:w-6/12 px-4">
               <div class="relative w-full mb-3">
                 <%= form.label 'Hora Fin', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
-                <%= form.datetime_field :end_at, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
+                <%= form.datetime_field :end_at, min: Date.today, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
               </div>
             </div>
             <div class="w-full lg:w-6/12 px-4">
               <div class="relative w-full mb-3">
                 <%= form.label 'Sala', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
                 <%= form.collection_select :room_id, Room.all, :id, :name, {}, { class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" } %>
+              </div>
+            </div>
+            <div class="w-full lg:w-6/12 px-4">
+              <div class="relative w-full mb-3">
+                <%= form.label 'Status', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
+                <%= form.select :status, options_for_select([['Confirmada', 1], ['Pendiente', 0], ['Cancelada', 2]]), {}, class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" %>
               </div>
             </div>
           </div>
