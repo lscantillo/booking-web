@@ -1,4 +1,7 @@
 <div class="w-full mx-auto pl-10 pr-12">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
   <div class="flex flex-wrap mt-4">
     <div class="w-full mb-12 px-4">
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white">
@@ -33,7 +36,7 @@
                     <%= link_to edit_customer_path(customer), class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-blueGray-400" do %>
                       <i class="fa fa-pen-square" title="Editar"></i>
                     <% end %>
-                    <%= button_to customer, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-red-500 ml-2" do %>
+                    <%= button_to customer, method: :delete, form: {data: {turbo_confirm: "Are You sure?"}}, class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-red-500 ml-2" do %>
                       <i class="fa fa-trash" title="Eliminar"></i>
                     <% end %>
                   </div>

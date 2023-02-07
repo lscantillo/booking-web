@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
     <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
     <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -21,6 +22,8 @@
         <div class="relative md:ml-64 bg-blueGray-100">
           <%= yield %>
         </div>
+        <%= turbo_frame_tag "modal" %>
+        <%= render "layouts/shared/confirmation_modal" %>
       <% else %>
         <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full" style="background-image: url('https://bit.ly/3DErXHg');">
           <div class="min-h-screen flex items-center justify-center">

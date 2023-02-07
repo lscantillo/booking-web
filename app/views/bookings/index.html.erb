@@ -48,7 +48,7 @@
                       <%= link_to edit_booking_path(booking), class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-blueGray-400" do %>
                         <i class="fa fa-pen-square" title="Editar"></i>
                       <% end %>
-                      <%= button_to booking, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-red-500 ml-2" do %>
+                      <%= button_to booking, method: :delete, form: {data: {turbo_confirm: "Are You sure?"}}, class: "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded bg-red-500 ml-2" do %>
                         <i class="fa fa-trash" title="Eliminar"></i>
                       <% end %>
                     </div>

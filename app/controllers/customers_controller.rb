@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.default
     @pagy, @customers = pagy(@customers, items: 10)
   end
 
@@ -24,13 +24,16 @@ class CustomersController < ApplicationController
   # POST /customers or /customers.json
   def create
     @customer = Customer.new(customer_params)
-
+    debugger
     respond_to do |format|
       if @customer.save
         format.html { redirect_to customers_path, notice: "Cliente creado." }
         format.json { render :show, status: :created, location: @customer }
+      elsif @customer.errors.any? && params[:modal]
+        format.html { render customers_path, notice: "Cliente no creado." }
+        format.json { render json: @customer.errors, status: :unprocessable_entity }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_booking_path, notice: "Cliente no creado." }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end

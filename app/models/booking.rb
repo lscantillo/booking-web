@@ -10,6 +10,7 @@ class Booking < ApplicationRecord
 
 
 
+
   def self.default
     where.not(status: :soft_delete)
   end

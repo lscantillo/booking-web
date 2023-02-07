@@ -1,3 +1,16 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <%= render "form", customer: @customer %>
-</div>
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="slim" class="mx-auto md:w-2/3 w-full">
+    <% if params[:modal] %>
+      <div class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="regular-modal-id">
+        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+            <div data-slim-target="modal" class="relative p-6 flex-auto">
+              <%= render "customer_modal", customer: @customer, modal: params[:modal] %>
+            </div>
+        </div>
+      </div>
+      <div class="opacity-25 fixed inset-0 z-40 bg-black" id="regular-modal-id-backdrop"></div>
+    <% else %>
+      <%= render "form", customer: @customer %>
+    <% end %>
+  </div>
+<% end %>

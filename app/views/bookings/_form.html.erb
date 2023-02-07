@@ -59,6 +59,22 @@
               </div>
             </div>
           </div>
+          <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">Usuario</h6>
+          <div data-controller="slim">
+            <div class="flex flex-wrap">
+              <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-3">
+                  <%= form.label 'Buscar', class: "block uppercase text-blueGray-600 text-xs font-bold mb-2" %>
+                  <%= form.select :customer_id, Customer.default.full_name, {include_blank: true}, { class: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" } %>
+                </div>
+              </div>
+              <!--<div class="w-full lg:w-6/12 px-4 justify-center mt-8">
+                <div class="relative w-full mb-3">
+                  <%#= link_to 'Crear Usuario', new_customer_path(modal:true), class: "bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all 0.15s ease 0s;", data: { turbo_frame: "modal" } %>
+                </div>
+              </div>-->
+            </div>
+          </div>
           <%= form.submit "Guardar", class: "bg-blueGray-700 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" %>
           <%= link_to 'Volver al listado', bookings_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
         </form>
