@@ -24,7 +24,6 @@ class CustomersController < ApplicationController
   # POST /customers or /customers.json
   def create
     @customer = Customer.new(customer_params)
-    debugger
     respond_to do |format|
       if @customer.save
         format.html { redirect_to customers_path, notice: "Cliente creado." }
