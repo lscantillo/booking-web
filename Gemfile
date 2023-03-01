@@ -80,6 +80,4 @@ gem "pagy", "~> 6.0"
 
 gem "friendly_id", "~> 5.5"
 
-gem "dockerfile-rails", ">= 1.0.0", :group => :development
-
 gem "aws-sdk-s3", "~> 1.119", require: false
