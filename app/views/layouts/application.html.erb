@@ -21,12 +21,12 @@
         <%= render "layouts/shared/sidebar" %>
         <div class="relative md:ml-64 bg-blueGray-100">
           <%= yield %>
+          <%= turbo_frame_tag "modal" %>
+          <%= render "layouts/shared/confirmation_modal" %>
         </div>
-        <%= turbo_frame_tag "modal" %>
-        <%= render "layouts/shared/confirmation_modal" %>
       <% else %>
-        <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full" style="background-image: url('https://bit.ly/3DErXHg');">
-          <div class="min-h-screen flex items-center justify-center">
+        <div class="absolute top-0 w-full h-full bg-no-repeat bg-blueGray-800 bg-full" style="background-image: url('https://bit.ly/3DErXHg');">
+          <div class="flex items-center justify-center min-h-screen">
             <%= yield %>
           </div>
         </div>

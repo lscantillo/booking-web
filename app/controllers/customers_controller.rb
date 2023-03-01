@@ -25,9 +25,16 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     respond_to do |format|
-      if @customer.save
+      modal = params.require(:customer).permit(:modal)
+      if @customer.save && modal[:modal] == "true"
+        format.html { redirect_to new_booking_path, notice: "Cliente creado." }
+        format.json { render :show, status: :created, location: @customer }
+      elsif @customer.save
         format.html { redirect_to customers_path, notice: "Cliente creado." }
         format.json { render :show, status: :created, location: @customer }
+      elsif modal[:modal] == "true"
+        format.html { redirect_to new_booking_path, alert: "Error al crear cliente. #{@customer.errors.full_messages.join(", ")}" }
+        format.json { render json: @customer.errors, status: :unprocessable_entity }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
