@@ -6,6 +6,7 @@ class Customer < ApplicationRecord
   validates :cellphone, presence: true
   has_many :bookings
   enum status: { active: 0, inactive: 1, soft_delete: 2 }
+
   def self.full_name
     select(:first_name, :last_name,:id).map { |customer| ["#{customer.first_name} #{customer.last_name}", customer.id] }
   end
@@ -21,5 +22,9 @@ class Customer < ApplicationRecord
   def soft_delete
     self.status = :soft_delete
     self.save
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end

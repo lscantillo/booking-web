@@ -15,11 +15,12 @@ export default class extends Controller {
                     id: booking.id,
                     calendarId: '1',
                     title: booking.title,
+                    location: booking.room,
                     category: 'time',
                     dueDateClass: '',
                     start: booking.start_at,
-                    end: booking.end_at
-
+                    end: booking.end_at,
+                    attendees: [booking.customer],
                 }
             ])
         })
