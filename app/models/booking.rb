@@ -8,9 +8,6 @@ class Booking < ApplicationRecord
   validates :end_at, presence: true
   validates :end_at, comparison: { greater_than: :start_at }
 
-
-
-
   def self.default
     where.not(status: :soft_delete)
   end

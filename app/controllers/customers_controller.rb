@@ -28,11 +28,8 @@ class CustomersController < ApplicationController
       if @customer.save
         format.html { redirect_to customers_path, notice: "Cliente creado." }
         format.json { render :show, status: :created, location: @customer }
-      elsif @customer.errors.any? && params[:modal]
-        format.html { render customers_path, notice: "Cliente no creado." }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
       else
-        format.html { redirect_to new_booking_path, notice: "Cliente no creado." }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end

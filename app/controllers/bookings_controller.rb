@@ -70,6 +70,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:status, :title, :description, :start_at, :end_at, :room_id, :customer_id).with_defaults(:customer_id => 1)
+      params.require(:booking).permit(:status, :title, :description, :start_at, :end_at, :room_id, :customer_id, :total_price).with_defaults(:customer_id => 1)
     end
 end
